@@ -15,11 +15,9 @@ $breakpoints: (
     @warn "Invalid breakpoint `#{$name}`.";
   } @else {
     @if map-get($breakpoints, $name) {
-      $in-mq: true !global;
       @media (min-width: map-get($breakpoints, $name)) {
         @content;
       }
-      $in-mq: false !global;
     } @else {
       @content;
     }
